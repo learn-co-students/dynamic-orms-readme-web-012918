@@ -15,10 +15,10 @@ class Song
 
     table_info = DB[:conn].execute(sql)
     column_names = []
-    table_info.each do |row|
+    table_info.each do |row| #why not map?
       column_names << row["name"]
     end
-    column_names.compact
+    column_names.compact #what about the integer keys?
   end
 
   self.column_names.each do |col_name|
@@ -59,6 +59,3 @@ class Song
   end
 
 end
-
-
-
